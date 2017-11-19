@@ -1,24 +1,26 @@
-def welcome_message(name):
-#Prints out a personalised welcome message
-    return "Welcome to this Python script, " + name + "!"
+class myclass:
+    ' Sample definition '
+    count = 0
+    myvar = 1
 
-def print_snakes(numsnakes):
-    how_many_snakes = numsnakes
-    snake_string = """
-    Welcome to Python3!
-    
-                 ____
-                / . .\\
-                \  ---<
-                 \  /
-       __________/ /
-    -=:___________/
+    def __init__(self, msg):
+        myclass.count += 1
+        self.message = msg
 
-    <3, Philip and Charlie
-    """
-    print(snake_string * how_many_snakes)
+    def myfunc1(self):
+        myvar = 100
+        print("Message from {}: {}".format(__name__, self.message))
+        print("Local variable: {}".format(myvar))
 
-#Call the welcome message function with the input "Udacity Student" 
-#and print the output
-print(welcome_message("Udacity Student"))
-print_snakes(2)
+    @classmethod
+    def incrCount(self):
+        print("Incrementing count...")
+
+
+obj1 = myclass("HELLO!!!")
+obj1.myfunc1()
+print(myclass.myvar)
+
+obj2 = myclass("HELLO AGAIN!!!")
+obj2.myfunc1()
+print(myclass.myvar)
