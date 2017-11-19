@@ -1,3 +1,6 @@
+import os
+
+
 class myclass:
     ' Sample definition '
     count = 0
@@ -11,6 +14,7 @@ class myclass:
         myvar = 100
         print("Message from {}: {}".format(__name__, self.message))
         print("Local variable: {}".format(myvar))
+        print(os.getcwd())
 
     @classmethod
     def incrCount(self):
